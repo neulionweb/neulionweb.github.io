@@ -1,0 +1,182 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title:  NeuLion Web Team
+subtitle: 技术分享
+name: nlweb
+email: helloint@qq.com
+description: 本站是团队技术分享博客。内容涵盖Web前端技术、自动化测试、部署、运维、系统监控等相关的研究与知识分享。
+keywords: nlweb,helloint,Javascript,Html,Docker,生活故事,React,Nginx,Jenkins,GitLab,开发者,编程,代码,开源,IT网站,Developer,Programmer,Coder,IT技术博客,
+encoding: "utf-8"
+favicon: favicon.ico 
+
+repository: neulionweb/neulionweb.github.io
+github_url: https://github.com/neulionweb
+url: https://neulionweb.dev
+cdn_prefix: /
+enforce_ssl: neulionweb.dev
+port: 4000
+host: localhost
+
+## Gem
+plugins:
+  - jekyll-paginate
+  - jekyll-geo-pattern
+  - rouge
+  - kramdown
+  - jekyll-github-metadata
+
+exclude: ['.idea']
+
+# Build settings
+markdown: kramdown
+#highlighter: rouge
+lsi:         false
+excerpt_separator: "\n\n"
+
+source:      .
+destination: ./_site
+
+quiet:    false
+defaults: []
+
+kramdown:
+  input: GFM
+  enable_coderay: true
+  syntax_highlighter: rouge
+
+syntax_highlighter_opts:
+   coderay_line_numbers:  nil
+
+# Pagination
+paginate: 12
+paginate_path: 'page:num'
+
+# Navigation. top menu list
+menus:
+
+  -
+    href: https://club.kdslife.com/f_15.html
+    label: KDS
+    target: _blank
+
+  -
+    href: https://www.mydrivers.com/
+    label: 快科技
+    target: _blank
+
+  -
+    href: https://www.nba.com/
+    label: NBA
+    target: _blank
+
+# Navigation. main menu list
+navs:
+
+  -
+    href: /
+    label: Home
+
+  -
+    href: /life.html
+    label: 生活
+
+  -
+    href: /edu.html
+    label: 教育
+
+  -
+    href: /thinking.html
+    label: 思考
+
+#  -
+#    href: /spring-boot.html
+#    label: Spring Boot
+#    target: _self
+#    subnav:
+#
+#      -
+#        subHref: /spring-boot.html
+#        subLabel: Spring Boot
+#
+#      -
+#        subHref: /spring-cloud.html
+#        subLabel: Spring Cloud
+
+# labels. my blog key words
+labels:
+
+#  -
+#    href: https://www.nba.com/
+#    label: NBA
+#    target: _blank
+
+
+# selected articles
+classes:
+
+  -
+    href: /life.html
+    name: 我的故事
+    describe: 生活就是故事，故事就是生活
+
+#  -
+#    href: /it.html
+#    name: IT行业深度报道
+#    describe: IT大佬，互联网知名公司的故事
+
+
+
+
+# ---------------- #
+#       RSS        #
+# ---------------- #
+subscribe_rss: /feed.xml
+
+# Sidebar to show popular repo
+side_bar_repo_limit: 6 # Number of repos to show
+
+# Google Analytics
+# analytics :
+# provider : google
+#   google :
+#     tracking_id : ''  # ex. UA-72165600-X
+
+
+# For about.html. Fell free to create your own!
+skill_software_keywords: [Java, MySQL, Oracle, Design Patterns]
+skill_j2ee_keywords: [Spring, Struct, Hibernet, MyBatis, JSP]
+skill_web_keywords: [HTML, CSS, JS, JQuery, Ajax, NodeJS, ExpressJS, MongoDB, Redis, PHP,  Boostrap]
+skill_mobile_app_keywords: [vuejs, hyhird app]
+
+
+# ---------------- #
+#      Comments    #
+# ---------------- #
+# support provider: disqus, gitment, gitalk
+comments_provider: gitalk
+# !!!重要!!! 请修改下面这些信息为你自己申请的
+# !!!Important!!! Please modify infos below to yours
+# https://disqus.com
+#disqus:
+#    username: xxxxx
+# https://imsun.net/posts/gitment-introduction/
+#gitment:
+#    owner: xxxxx
+#    repo: blog-comments
+#    oauth:
+#        client_id: xxxxxxxxxxxxxxxxxxxx
+#        client_secret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+# https://github.com/gitalk/gitalk#install
+gitalk:
+    owner: neulionweb
+    repo: blog-comments
+    clientID: bd19f585d4e20d3aaa60
+    clientSecret: 27b511d7f82d3f6984ebbbd8b80718cd7b2282c4
+# 在使用其它评论组件时可点击显示 Disqus
+#lazy_load_disqus : true
