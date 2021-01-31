@@ -18,7 +18,7 @@ css: ['index.css', 'sidebar-popular-repo.css']
 <section class="content container">
     <div class="row">
         <!-- Post List -->
-        <div class="col-md-8">
+        <div class="col-md-12">
             <ol class="post-list">
                 {% for post in paginator.posts %}
                     <li class="post-list-item">
@@ -37,8 +37,10 @@ css: ['index.css', 'sidebar-popular-repo.css']
             <!-- Pagination -->
             {% include pagination.html %}
         </div>
+        {% comment %}
         <div class="col-md-4">
             {% include sidebar-popular-repo.html %}
         </div>
+        {% endcomment %}
     </div>
 </section>

@@ -7,10 +7,10 @@
 
 # Site settings
 title:  NeuLion Web Team
-subtitle: 技术分享
+subtitle: 经验分享
 name: NWT
 email: helloint@qq.com
-description: 本站是团队技术分享博客。内容涵盖Web前端技术、自动化测试、部署、运维、系统监控等相关的研究与知识分享。
+description: 本站是团队经验分享博客。内容涵盖Web前端技术、交互设计、自动化测试、部署、运维、系统监控等相关的研究与知识分享。
 keywords: nlweb,helloint,Javascript,Html,Docker,生活故事,React,Nginx,Jenkins,GitLab,开发者,编程,代码,开源,IT网站,Developer,Programmer,Coder,IT技术博客,
 encoding: "utf-8"
 favicon: favicon.ico 
@@ -128,15 +128,15 @@ labels:
 
 
 # selected articles
-classes:
-
-  -
-    href: /life.html
-    name: 我的故事
-    describe: 生活就是故事，故事就是生活
+#classes:
+#
+#  -
+#    href: /tech.html
+#    name: 技术分享
+#    describe: 生活就是故事，故事就是生活
 
 #  -
-#    href: /it.html
+#    href: /thinking.html
 #    name: IT行业深度报道
 #    describe: IT大佬，互联网知名公司的故事
 
