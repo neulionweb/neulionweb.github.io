@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 开脑洞
-titlebar: thinking
+titlebar: Thinking
 menu: thinking
 css: ['blog-page.css']
 permalink: /thinking

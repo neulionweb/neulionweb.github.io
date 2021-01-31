@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 技术分享
-titlebar: tech
+titlebar: Tech
 menu: tech
 css: ['blog-page.css']
 permalink: /tech
