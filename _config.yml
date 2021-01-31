@@ -92,17 +92,17 @@ navs:
     href: /
     label: Home
 
-  -
-    href: /life.html
-    label: 生活
+#  -
+#    href: /life.html
+#    label: 生活
 
   -
-    href: /edu.html
-    label: 教育
+    href: /tech.html
+    label: 技术分享
 
   -
     href: /thinking.html
-    label: 思考
+    label: 开脑洞
 
 #  -
 #    href: /spring-boot.html

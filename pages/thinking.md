@@ -1,11 +1,10 @@
 ---
 layout: page
-title: 互联网那些事
-titlebar: it
-subtitle: <span class="mega-octicon octicon-organization"></span>&nbsp;&nbsp; IT行业大佬，知名互联网公司的那些故事...
-menu: it
+title: 开脑洞
+titlebar: thinking
+menu: thinking
 css: ['blog-page.css']
-permalink: /it
+permalink: /thinking
 ---
 
 <div class="row">
@@ -14,7 +13,7 @@ permalink: /it
 
         <ul id="posts-list">
             {% for post in site.posts %}
-                {% if post.category=='it' %}
+                {% if post.category=='life' %}
                 <li class="posts-list-item">
                     <div class="posts-content">
                         <span class="posts-list-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
