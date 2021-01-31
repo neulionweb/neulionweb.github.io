@@ -8,7 +8,7 @@
 # Site settings
 title:  NeuLion Web Team
 subtitle: 技术分享
-name: nlweb
+name: NWT
 email: helloint@qq.com
 description: 本站是团队技术分享博客。内容涵盖Web前端技术、自动化测试、部署、运维、系统监控等相关的研究与知识分享。
 keywords: nlweb,helloint,Javascript,Html,Docker,生活故事,React,Nginx,Jenkins,GitLab,开发者,编程,代码,开源,IT网站,Developer,Programmer,Coder,IT技术博客,
@@ -59,21 +59,31 @@ paginate_path: 'page:num'
 
 # Navigation. top menu list
 menus:
-
-  -
-    href: https://club.kdslife.com/f_15.html
-    label: KDS
-    target: _blank
-
-  -
-    href: https://www.mydrivers.com/
-    label: 快科技
-    target: _blank
-
   -
     href: https://www.nba.com/
     label: NBA
     target: _blank
+  -
+    href: https://gamepass.nfl.com/
+    label: NFL
+    target: _blank
+  -
+    href: https://www.univisionnow.com/
+    label: UNow
+    target: _blank
+  -
+    href: https://stream.osn.com/
+    label: OSN
+    target: _blank
+  -
+    href: https://www.skysportnow.co.nz/
+    label: Sky
+    target: _blank
+  -
+    href: https://www.btnplus.com/
+    label: BTN
+    target: _blank
+  -
 
 # Navigation. main menu list
 navs:
