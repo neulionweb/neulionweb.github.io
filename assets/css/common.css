@@ -39,7 +39,8 @@
     color: #4183c4;
 }
 
-#site-header-brand, #site-header-brand .octicon {
+#site-header-brand,
+#site-header-brand .octicon {
     margin-top: 0;
     margin-bottom: 0;
     font-size: 38px;
@@ -47,9 +48,14 @@
     line-height: 38px;
 }
 
+.site-header-nav-scrolled #site-header-brand,
+.site-header-nav-scrolled #site-header-brand .octicon {
+    font-size: 28px;
+}
+
 .site-header-nav{
     float:right;
-    margin-bottom: -20px;
+    /*margin-bottom: -20px;*/
 }
 
 .site-header-nav-item {
@@ -69,13 +75,14 @@
 
 .site-header.site-header-nav-scrolled {
     margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
     background-color: white;
     -webkit-box-shadow: 0 0.125em 0.125em 0 rgba(0, 0, 0, 0.125);
     -moz-box-shadow: 0 0.125em 0.125em 0 rgba(0, 0, 0, 0.125);
     -ms-box-shadow: 0 0.125em 0.125em 0 rgba(0, 0, 0, 0.125);
     -o-box-shadow: 0 0.125em 0.125em 0 rgba(0, 0, 0, 0.125);
     box-shadow: 0 0.125em 0.125em 0 rgba(0, 0, 0, 0.125);
-
 }
 
 
@@ -263,7 +270,7 @@ blockquote {
 }
 .site-header-nav-item > a {
     display: block;
-    padding: 10px;
+    padding: 5px;
     color: #000;
 }
 .site-header-nav-item .submenu {

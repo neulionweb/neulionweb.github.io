@@ -28,7 +28,8 @@
             });
         });
 
-        var fixmeTop = $('#post-directory-module').offset().top - 100;       // get initial position of the element
+        var fixOffset = 65;
+        var fixmeTop = $('#post-directory-module').offset().top - fixOffset;       // get initial position of the element
 
         $(window).scroll(function() {                  // assign scroll event listener
 
@@ -36,7 +37,7 @@
 
             if (currentScroll >= fixmeTop) {           // apply position: fixed if you
                 $('#post-directory-module').css({      // scroll to that element or below it
-                    top: '100px',
+                    top: fixOffset + 'px',
                     position: 'fixed',
                     width: 'inherit'
                 });
@@ -54,7 +55,7 @@
             e.preventDefault();
 
             $("body, html").animate({
-                scrollTop: ($( $(this).attr('hre') ).offset().top - 100)
+                scrollTop: ($( $(this).attr('hre') ).offset().top - fixOffset)
             }, 600);
 
         });
