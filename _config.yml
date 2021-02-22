@@ -13,8 +13,8 @@ email: helloint@qq.com
 description: 本站是团队经验分享博客。内容涵盖Web前端技术、交互设计、自动化测试、部署、运维、系统监控等相关的研究与知识分享。
 keywords: nlweb,helloint,Javascript,Html,Docker,生活故事,React,Nginx,Jenkins,GitLab,开发者,编程,代码,开源,IT网站,Developer,Programmer,Coder,IT技术博客,
 encoding: "utf-8"
-favicon: favicon.ico 
-
+favicon: favicon.ico
+permalink: /:year/:month/:title
 repository: neulionweb/neulionweb.github.io
 github_url: https://github.com/neulionweb
 url: https://neulionweb.dev
