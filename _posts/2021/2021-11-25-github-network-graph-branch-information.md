@@ -8,7 +8,7 @@ Hope this topic can help to easier understand the `GitHub Network Graph`.
   
 ## Line
 ### New branch:  
- ![New branch]({{ site.cdn_prefix }}assets/images/2021/11/25/line-branch.png)  
+![New branch]({{ site.cdn_prefix }}assets/images/2021/11/25/line-branch.png){: .align-left}  
 ### First commit on the new branch:  
  ![First commit]({{ site.cdn_prefix }}assets/images/2021/11/25/line-first-commit.png)  
 ### A Merge:  
