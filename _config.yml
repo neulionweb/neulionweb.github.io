@@ -30,7 +30,6 @@ plugins:
   - rouge
   - kramdown
   - jekyll-github-metadata
-
 exclude: ['.idea']
 
 # Build settings
