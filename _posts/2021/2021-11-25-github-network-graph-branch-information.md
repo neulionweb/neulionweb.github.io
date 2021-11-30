@@ -5,7 +5,7 @@ tags: github network graph branch tag
 ---
 # GitHub Network Instruction & Branch, Tag
 Hope this topic can help you to easier understand the `GitHub Network Graph`.  
-Cases can be seen on https://github.com/helloint/github-network/network
+Cases can be seen on <https://github.com/helloint/github-network/network>
 
 ## Line
 ### The head of the branch. The branch label is on the head:
