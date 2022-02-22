@@ -208,7 +208,7 @@ firebaseAuth(init);
 
 ## 最后
 这只是Firebase Authentication的一个极其简单的应用场景。他的完整功能比这个多得多。  
-如果你需要在app里完全用Firebase做用户模块，也可以看下 `react-firebaseui`[https://github.com/firebase/firebaseui-web-react]。
+如果你需要在app里完全用Firebase做用户模块，也可以看下 `react-firebaseui`<https://github.com/firebase/firebaseui-web-react>。
 
 ## 最后的最后
 功能写完交付后了，才发现有个很大的漏洞：不能完全屏蔽新用户注册……
