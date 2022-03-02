@@ -211,8 +211,11 @@ firebaseAuth(init);
 如果你需要在app里完全用Firebase做用户模块，也可以看下 `react-firebaseui`<https://github.com/firebase/firebaseui-web-react>。
 
 ## 最后的最后
-功能写完交付后了，才发现有个很大的漏洞：不能完全屏蔽新用户注册……
-虽然现在通过`signInOptions.disableSignUp`把UI上的注册入口关闭了，但SDK层面上仍然可以注册新用户。
-而要避免这个，需要去后台关闭注册功能，而这个选项得在 [Google Cloud Identity](https://github.com/firebase/firebaseui-web#configure-email-provider) 里关闭，而这个服务是收费的……
-Firebase Console里并没有提供这个功能。  
+功能写完交付后了，才发现有个漏洞：Firebase不能完全关闭新用户注册……，
+顶多只能通过`signInOptions.disableSignUp`把UI上的注册入口关闭了，但在SDK层面上仍然可以注册新用户。
+完全关闭注册的开关在Google Cloud Identity Platform里，详见[Firebase文档说明](https://github.com/firebase/firebaseui-web#configure-email-provider)。
+具体位置见下图：  
+![Google Identity Platform]({{ site.cdn_prefix }}assets/images/2022/02/18/google-identity.png)
+而进到这里，你得首先启用Google Cloud Service，然后启用Identity Platform并升级你的App(会提示你此操作不可逆)……
+好在看了下Pricing，小范围使用应该不会收费。这样一个简单的功能，并没在Firebase Console里提供，有点坑。  
 好吧就先这样吧ㄱ. г
