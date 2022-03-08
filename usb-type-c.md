@@ -1,0 +1,209 @@
+# 奇妙的Type-C
+
+最近升级了显示器，买了Dell新出的U2723QE。这款显示器自称Hub Monitor。  
+![背面丰富的接口](https://cdn.jsdelivr.net/gh/neulionweb/neulionweb.github.io@master/assets/images/2022/02/27/u2723qe.png)  
+([大图](https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2723qe/media-gallery/monitor-u2723qe-gallery-5.psd?fmt=pjpg&amp;pscan=auto&amp;scl=1&amp;wid=4451&amp;hei=1500&amp;qlt=100,0&amp;resMode=sharp2))  
+简单的说，你可以把所有外设都接在显示器上，包括：键盘/鼠标/网线/耳机/移动硬盘，甚至于第二台显示器，然后只用一根Type C的线连笔记本就行了。
+连接如此简洁，让我对Type C产生了兴趣，想搞明白它内部的工作方式。
+
+## 名词解释
+
+先把几个名词说明一下，方便后文全用缩写表示。
+
+-   USB Type-C： 是一种USB接口外形标准
+
+![Type C 接口](https://cdn.jsdelivr.net/gh/neulionweb/neulionweb.github.io@master/assets/images/2022/02/27/type-c.jpeg)
+
+-   USB-C： USB Type-C 的缩写
+-   DP： DisplayPort的缩写, 视频接口标准
+-   TBT： Thunderbolt, 雷电，一种传输协议，由Intel发布。
+
+早期的雷电1/2用的特殊接口，基本上只在Apple的设备上使用。从雷电3开始转而使用Type C，同时在Windows上提供，从而普及。
+
+-   USB-C PD： 充电协议，最高输出功率为100W (5V*20A)。PD是Power Delivery的缩写。
+-   全功能USB-C： 是指该USB-C同时支持充电、数据、视频。
+
+## 时间线
+
+整理了一下时间线：
+
+<table>
+<tr class="header">
+<th>时间</th>
+<th>主角</th>
+<th>说明</th>
+</tr>
+<tr class="odd">
+<td>2000</td>
+<td>USB 2.0</td>
+<td>USB 2.0 最大传输带宽为480Mbps(60MB/s)</td>
+</tr>
+<tr class="even">
+<td>2008</td>
+<td>USB 3.0</td>
+<td>USB 3.0 最大传输带宽为5.0Gbps(625MB/s)</td>
+</tr>
+<tr class="odd">
+<td>2010</td>
+<td>DP 1.2</td>
+<td>DP 1.2 (HBR2)，带宽 21.6Gbps(包含4个信道，单个信道5.4Gbps)，有效带宽17.28Gbps，支持4K@60Hz</td>
+</tr>
+<tr class="even">
+<td>2013/09</td>
+<td>HDMI 2.0</td>
+<td>HDMI 2.0 带宽 18Gbps 支持4K@50/60Hz</td>
+</tr>
+<tr class="odd">
+<td>2013/12</td>
+<td>USB 3.1</td>
+<td>USB 3.1 宣布Gen2规格，带宽翻倍，最大传输带宽为10Gbps。先前的3.0被命令为Gen1。</td>
+</tr>
+<tr class="even">
+<td>2015/06</td>
+<td>TBT3</td>
+<td>雷电3，40Gbps，可支持两个4K@60Hz显示器同时使用。原生支持 USB 3.1、DisplayPort、PCI Express 和 Thunderbolt 四种协议。(雷电1 10Gbps, 雷电2 20Gbps)</td>
+</tr>
+<tr class="odd">
+<td>2016/02</td>
+<td>DP 1.4</td>
+<td>DP 1.4 (HBR3)，带宽 32.4Gbps((包含4个信道，单个信道8.1Gbps))，有效带宽25.92Gbps，支持4K@120Hz，8k@60Hz</td>
+</tr>
+<tr class="even">
+<td>2017/01</td>
+<td>HDMI 2.1</td>
+<td>HDMI 2.1，带宽 48Gbps，支持4K@120Hz，8K@60Hz</td>
+</tr>
+<tr class="odd">
+<td>2017/09</td>
+<td>USB 3.2</td>
+<td>USB 3.2，支持双通道，提高数据传输效率。Gen 1x2 10Gbps, Gen 2x2 20Gbps</td>
+</tr>
+<tr class="even">
+<td>2019/06</td>
+<td>DP 2.0</td>
+<td>DP 2.0，77.37Gbps，支持8k@60Hz</td>
+</tr>
+<tr class="odd">
+<td>2019/08</td>
+<td>USB4</td>
+<td>USB4 = USB 3.2 + TBT3. 宣布Gen3规格，Gen 3x1 20Gbps, Gen 3x2 40Gbps<br/><img src="https://cdn.jsdelivr.net/gh/neulionweb/neulionweb.github.io@master/assets/images/2022/02/27/usb4.jpeg" width="320" height="331"></td>
+</tr>
+<tr class="even">
+<td>2020/06</td>
+<td>TBT4</td>
+<td>雷电4 = 满血USB4。 雷电4接口的带宽虽然仍然是40Gbps，但是其中用于数据传输的部分提高到了32Gbps，作为对比，雷电3接口用于数据传输的部分只有22Gbps；另外，雷电4最高可以输出8K分辨率视频画面或两路4K分辨率视频画面<br/><img src="https://cdn.jsdelivr.net/gh/neulionweb/neulionweb.github.io@master/assets/images/2022/02/27/tbt4.jpeg" alt="雷电4传输方式" /></td>
+</tr>
+</table>
+
+## Display Alt Mode
+
+Type C一统江湖的趋势很明显，这也是为什么DP和HDMI纷纷出了各自的Alt Mode，使之能够在Type C接口上跑视频信号，使得Type C变成集视频/数据/电源的全功能接口。
+
+## Type C接口的构成
+
+`USB Type C`针脚包含了2组通道(RX和TX)。
+![Type C 针脚](https://cdn.jsdelivr.net/gh/neulionweb/neulionweb.github.io@master/assets/images/2022/02/27/type-c-pin.jpeg)  
+这两组通道有不同的玩法：
+
+-   既可以完全跑数据，最高支持到`Gen2x2`(`Gen2`表示`USB3.1`协议，`x2`表示`USB3.2`的双通道)的20Gbps
+
+对应产品有Kingston的XS2000固态移动硬盘
+
+-   也可以用其中一个通道跑数据，另一个通道通过Alt Mode传输视频信号
+
+比如DP Alt Mode，在DP1.4(HBR3)的协议下，可以传输4K@60Hz的视频信号
+
+-   甚至可以用这两个通道都跑视频信号
+
+传输2路4K@60Hz，或1路4K@120Hz，8K@60Hz。
+
+## Dell显示器接口分析
+
+再回来看Dell U2723QE的USB-C的技术指标：  
+`USB-C upstream/DisplayPort 1.4 Alt Mode with Power Delivery (power up to 90W, HDCP 2.2)`  
+([链接](https://www.dell.com/en-hk/shop/dell-ultrasharp-27-4k-usb-c-hub-monitor-u2723qe/apd/210-bdzm/monitors-monitor-accessories#techspecs_section))  
+它可以承载：
+
+-   视频：DP1.4 (HBR3) 4k@60Hz, 用掉一个通道
+-   高速数据：USB 3.2 Gen1，传输速度能到600M+(没有更快的测试设备了)，用掉另一个通道
+    从接口上来说，数据部分极限可以支持到`USB 3.2 Gen 2`, 但可能这个Hub硬件不支持，不过`USB 3.2 Gen1`的5Gbps就已经能够满足多数使用场景的需求了。
+-   其他数据：千兆网线，猜测是共享USB3的数据通道，影响不大。其他USB2.0的设备应该是共享USB2.0的数据通道。
+-   供电：PD 90W(20V4.5A)
+
+而日常使用模式的话，4K@60Hz视频 + 充电 + 键/鼠/耳机，毫无压力。
+
+## 其他信息
+
+### 常见显示分辨率所需带宽
+
+<table>
+<tr class="header">
+<th>分辨率</th>
+<th>所需的最小带宽</th>
+</tr>
+<tr class="odd">
+<td>1 x FHD (1920 x 1080) 显示屏 <span class="citation" data-cites="60">@60</span> Hz</td>
+<td>3.2 Gbps</td>
+</tr>
+<tr class="even">
+<td>1 x QHD (2560 x 1440) 显示屏 <span class="citation" data-cites="60">@60</span> Hz</td>
+<td>5.6 Gbps</td>
+</tr>
+<tr class="odd">
+<td>1 x 4K (3840 x 2160) 显示屏 <span class="citation" data-cites="30">@30</span> Hz</td>
+<td>6.2 Gbps</td>
+</tr>
+<tr class="even">
+<td>1 x 4K (3840 x 2160) 显示屏 <span class="citation" data-cites="60">@60</span> Hz</td>
+<td>12.5 Gbps</td>
+</tr>
+</table>
+
+### USB3.0的命名
+
+USB3.0的命名比较容易产生困扰，因为它总是在新版本里重新命名老版本，见表格：
+
+<table>
+<tr class="header">
+<th>传输速度 (接口选项)</th>
+<th>USB3.0</th>
+<th>USB3.1</th>
+<th>USB3.2</th>
+</tr>
+<tr class="odd">
+<td>5Gbps<br/>(USB-A、 USB-C、microUSB)</td>
+<td>USB3.0</td>
+<td>Gen 1</td>
+<td>Gen 1x1</td>
+</tr>
+<tr class="even">
+<td>10Gbps<br/>(仅 USB-C)</td>
+<td>-</td>
+<td>-</td>
+<td>Gen 1x2</td>
+</tr>
+<tr class="odd">
+<td>10Gbps<br/>(USB-A、 USB-C、microUSB)</td>
+<td>-</td>
+<td>Gen 2</td>
+<td>Gen 2x1</td>
+</tr>
+<tr class="even">
+<td>20Gbps<br/>(仅 USB-C)</td>
+<td>-</td>
+<td>-</td>
+<td>Gen 2x2</td>
+</tr>
+</table>
+
+## 参考文章
+
+-   [Type-C 扩展器 方案指南（DP Alternative Mode 篇）](https://zhuanlan.zhihu.com/p/342165494)
+-   [USB Type-C引脚排布指南](https://www.yiboard.com/thread-1035-1-1.html)
+-   [USB 3.1 Gen 1、Gen 2 和 USB 3.2](https://www.kingston.com.cn/cn/usb-flash-drives/usb-30)
+-   [DP1.4，HDMI2.1，只支持到4K120Hz。那些4K144Hz甚至更高的显示器是怎么实现的?](https://www.zhihu.com/question/322584797/answer/2097419186)
+
+
+
+Reference:
+
