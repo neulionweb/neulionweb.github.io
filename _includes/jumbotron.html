@@ -7,7 +7,10 @@
                     {{ page.subtitle }}
                 {% endif %}
                 {% if page.date %}
-                <span class="octicon octicon-calendar"></span> {{ page.date | date: "%Y/%m/%d" }}
+                    <span class="octicon octicon-calendar"></span> {{ page.date | date: "%Y/%m/%d" }}
+                {% endif %}
+                {% if page.author_github %}
+                    <span class="octicon octicon-person"></span> <a href="https://github.com/{{ site.data.authors[page.author_github].github }}">{{ site.data.authors[page.author_github].name }}</a>
                 {% endif %}
             </span>
         </div>
