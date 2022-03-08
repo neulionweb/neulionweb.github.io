@@ -167,6 +167,7 @@ comments_provider: gitalk
 # https://github.com/gitalk/gitalk#install
 gitalk:
     owner: neulionweb
+    admin: ['neulionweb','helloint']
     repo: blog-comments
     clientID: bd19f585d4e20d3aaa60
     clientSecret: 27b511d7f82d3f6984ebbbd8b80718cd7b2282c4
