@@ -59,30 +59,9 @@ paginate_path: 'page:num'
 # Navigation. top menu list
 menus:
   -
-    href: https://www.nba.com/
-    label: NBA
+    href: https://github.com/neulionweb/neulionweb.github.io
+    label: GitHub
     target: _blank
-  -
-    href: https://gamepass.nfl.com/
-    label: NFL
-    target: _blank
-  -
-    href: https://www.univisionnow.com/
-    label: UNow
-    target: _blank
-  -
-    href: https://stream.osn.com/
-    label: OSN
-    target: _blank
-  -
-    href: https://www.skysportnow.co.nz/
-    label: Sky
-    target: _blank
-  -
-    href: https://www.btnplus.com/
-    label: BTN
-    target: _blank
-  -
 
 # Navigation. main menu list
 navs:
@@ -96,12 +75,16 @@ navs:
 #    label: 生活
 
   -
-    href: /tech.html
-    label: 技术分享
+    href: /frontend.html
+    label: 前端技术
 
   -
-    href: /thinking.html
-    label: 开脑洞
+    href: /tech.html
+    label: IT知识
+
+#  -
+#    href: /thinking.html
+#    label: 开脑洞
 
 #  -
 #    href: /spring-boot.html

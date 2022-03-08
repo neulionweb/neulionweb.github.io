@@ -1,10 +1,10 @@
 ---
 layout: page
-title: 知识分享
-titlebar: Tech
-menu: tech
+title: 前端技术
+titlebar: Frontend
+menu: frontend
 css: ['blog-page.css']
-permalink: /tech
+permalink: /frontend
 ---
 
 <div class="row">
@@ -13,7 +13,7 @@ permalink: /tech
 
         <ul id="posts-list">
             {% for post in site.posts %}
-                {% if post.category=='tech' %}
+                {% if post.category=='frontend' %}
                 <li class="posts-list-item">
                     <div class="posts-content">
                         <span class="posts-list-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
