@@ -127,6 +127,17 @@
     display: inline-block;
     vertical-align: middle;
     color: #2e2e2e;
+    margin-left: -5px;
+}
+
+.jumbotron .meta-info a {
+    color: #2e2e2e;
+    transition: 0.3s;
+    border-bottom: 1px solid transparent;
+}
+
+.jumbotron .meta-info a:hover {
+    border-color: black;
 }
 
 .jumbotron .meta-info-index {
@@ -135,6 +146,10 @@
     display: inline-block;
     vertical-align: middle;
     color: #2e2e2e;
+}
+
+.jumbotron .meta-info .octicon {
+    margin-left: 5px;
 }
 
 .jumbotron.meta-info, .jumbotron .meta-info .octicon {
