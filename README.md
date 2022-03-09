@@ -12,7 +12,6 @@ Fork from: <https://github.com/ityouknow/ityouknow.github.io>
 **本地环境**  
 * 安装 `Jekyll` <http://jekyllcn.com/docs/installation/>  
 Note: 建议通过`Homebrew`安装`Ruby`替换macOS自带版本  
-
 版本参考：
 ```
 `ruby -v` ruby 3.1.0p0 (2021-12-25 revision fb4df44d16) [arm64-darwin21]  
@@ -21,10 +20,13 @@ Note: 建议通过`Homebrew`安装`Ruby`替换macOS自带版本
 `jekyll -v` jekyll 4.2.2
 ```  
 
-* 初始化 `bundle install`
-* 启动 `jekyll serve`
+* 初始化 `bundle install`  
+* 启动 `jekyll s`  
 
-**文档说明**  
+Server address: <http://localhost:4000>  
+Press `Ctrl-C` to stop.  
+
+**文章提交说明**  
 * 文章Markdown文件存放在`./_posts`下, 目录格式: `_posts/yyyy/yyyy-mm-dd-{title}.md`  
 * Assets文件(主要是图片)存放在`./assets`下, 目录格式: `assets/images/yyyy/mm/dd/{filename}`, 引用方式举例:
 `
