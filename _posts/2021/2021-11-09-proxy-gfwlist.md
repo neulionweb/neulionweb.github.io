@@ -3,7 +3,6 @@ layout: post
 title:  "顺畅的网络访问"
 tags: browser proxy network gfwlist
 ---
-# 顺畅的网络访问  
 ## 问题  
 在Office里, 经常会遇到一些打不开的网站, 需要找IT来帮忙'代理'解决.
 IT现在的代理策略是在交换机上实现的, 而交换机只能通过IP来指定需要代理的列表, 没办法通过域名来指定.

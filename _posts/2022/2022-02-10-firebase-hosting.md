@@ -3,7 +3,6 @@ layout: post
 title:  "用Firebase Hosting部署一个Web App"
 tags: firebase hosting deploy webapp
 ---
-# 用Firebase Hosting功能快速部署一个Web App
 ## Firebase
 Firebase: `https://firebase.google.com/` 可以用Google账号登陆。  
 进去后先建个project, 就能看到他的主界面.  

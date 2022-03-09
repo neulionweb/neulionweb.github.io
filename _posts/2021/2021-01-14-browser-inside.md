@@ -3,7 +3,6 @@ layout: post
 title:  "Browser Inside"
 tags: frontend browser chrome
 ---
-# Browser Inside
 这篇文章聊一下主流浏览器的内核版本, 浏览器引擎, 以及内部的Javascript引擎.  
 导读文章: [[译] 你能分得清楚 Chromium, V8, Blink, Gecko, WebKit 之间的区别吗？](https://juejin.cn/post/6844904055236460558)  
 >“3 个主要的浏览器引擎下，是 3 个不同的 JavaScript 引擎。也就是说现在市场上只有 3 个主要的 JavaScript 引擎。Chromium 市场份占据 65％，再加上从 Edge 和 Internet Explorer 吸收的大约 15％ 的市场份额，后面还会继续扩大。当前，Web 开发人员正在最流行的浏览器引擎上构建能够发挥最佳性能的网站。但是 Chromium 最后有没有可能重蹈 Internet Explorer 6 的覆辙呢？不过还是希望 Chromium 仍能继续跟进标准的步子，并且随着来自 Firefox 和 Safari 的竞争，相信未来的发展也会更加明朗和积极。希望 Google 不会减慢 Chromium 的开发速度，并在如此高的市场份额下继续保持竞争力。”

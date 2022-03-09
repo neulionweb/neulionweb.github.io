@@ -3,7 +3,6 @@ layout: post
 title:  "GitHub Network Instruction & Branch, Tag"
 tags: github network graph branch tag
 ---
-# GitHub Network Instruction & Branch, Tag
 Hope this topic can help you to easier understand the `GitHub Network Graph`.  
 Cases can be seen on <https://github.com/helloint/github-network/network>
 

@@ -3,7 +3,6 @@ layout: post
 title:  "Chrome Extension 学习心得"
 tags: chrome extension keynote
 ---
-# Chrome Extension 简单心得
 昨天为了一个"从网站A Copy Data 到网站B"的行为，想写个Chrome插件来实现快捷操作，从而避免在Console里来回复制命令。
 本以为很简单的事情，实际做起来，在一些细节上绕了不少弯路。现在事情做完了，就简单记录一下。
 
