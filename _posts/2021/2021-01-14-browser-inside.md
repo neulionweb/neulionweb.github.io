@@ -2,6 +2,7 @@
 layout: post
 title:  "Browser Inside"
 tags: frontend browser chrome
+category: frontend
 ---
 这篇文章聊一下主流浏览器的内核版本, 浏览器引擎, 以及内部的Javascript引擎.  
 导读文章: [[译] 你能分得清楚 Chromium, V8, Blink, Gecko, WebKit 之间的区别吗？](https://juejin.cn/post/6844904055236460558)  

@@ -1,8 +1,11 @@
 ---
 layout: post
-title:  "Testing Jekyll Locally"
+title:  "Testing Jekyll Locally on a Windows"
 tags: jekyll github-page ruby bundler
+category: dev
 ---
+It is not easy to install Jekyll on a Windows machine.
+
 ## Install
 You can follow [Testing your GitHub Pages site locally with Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll)
 step by step, or here is some brief instruction:

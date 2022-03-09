@@ -2,6 +2,7 @@
 layout: post
 title:  "顺畅的网络访问"
 tags: browser proxy network gfwlist
+category: it
 ---
 ## 问题  
 在Office里, 经常会遇到一些打不开的网站, 需要找IT来帮忙'代理'解决.

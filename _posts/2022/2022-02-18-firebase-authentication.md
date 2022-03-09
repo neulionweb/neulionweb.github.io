@@ -2,6 +2,7 @@
 layout: post
 title:  "用Firebase Authentication给你的Web app快速的加个验证"
 tags: firebase authentication web app
+category: dev
 ---
 ## 需求
 我们需要对一个部署在公网上的demo site做访问限制，只允许特定的人可以访问，所以需要一个简单快速的鉴权方案。

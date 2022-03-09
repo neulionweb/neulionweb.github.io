@@ -2,6 +2,7 @@
 layout: post
 title:  "用Firebase Hosting部署一个Web App"
 tags: firebase hosting deploy webapp
+category: dev
 ---
 ## Firebase
 Firebase: `https://firebase.google.com/` 可以用Google账号登陆。  

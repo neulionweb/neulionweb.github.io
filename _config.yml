@@ -66,22 +66,24 @@ menus:
 
 # Navigation. main menu list
 navs:
-
   -
     href: /
     label: Home
-
 #  -
 #    href: /life.html
 #    label: 生活
-
   -
     href: /frontend.html
-    label: 前端技术
-
+    label: 前端
+    id: frontend
   -
-    href: /tech.html
-    label: IT知识
+    href: /dev.html
+    label: 开发
+    id: dev
+  -
+    href: /it.html
+    label: IT
+    id: it
 
 #  -
 #    href: /thinking.html
