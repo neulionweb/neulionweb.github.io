@@ -42,7 +42,7 @@ function FindProxyForURL(url, host) {
 搬砖的感觉真好!  
 Fork过来稍微改了下, 设置了代理, 配上GitHub Action, 添加自定义域名列表, here you go:
 ```
-https://raw.githubusercontent.com/helloint/gfwlist2pac/master/gfwlist.pac
+https://cdn.jsdelivr.net/gh/helloint/gfwlist2pac@master/gfwlist.pac
 ```
 源码在: `https://github.com/helloint/gfwlist2pac` 欢迎Fork.
 
