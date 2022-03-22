@@ -40,11 +40,11 @@ width: deviceWidth * 0.7;
 
 比如整个页面的布局是header，footer 固定height，中间自适应. 中间区域可以利用高度计算而来。
 
-![layout]({{ site.cdn_prefix }}assets/images/assets/2022/03/21/mobile_design.png)
+![layout]({{ site.cdn_prefix }}assets/images/2022/03/21/mobile_design.png)
 
 比如这个item row的布局，目前用的是flex, 1:3:1:1:1
 
-![layout]({{ site.cdn_prefix }}assets/images/assets/2022/03/21/item.png)
+![layout]({{ site.cdn_prefix }}assets/images/2022/03/21/item.png)
 
 
 ### 场景：盒模型 
@@ -52,7 +52,7 @@ width: deviceWidth * 0.7;
 
 举例：  
 设计稿：整体尺寸 1920px * 1080px. 设计了一个元素 640px * 540px(蓝色区域)
-![design]({{ site.cdn_prefix }}assets/images/assets/2022/03/21/demo_design.png)
+![design]({{ site.cdn_prefix }}assets/images/2022/03/21/demo_design.png)
 
 最佳实践
 ```javascript
@@ -69,16 +69,16 @@ const {deviceWidth, deviceHeight} = Dimensions.get('window');
 
 |设备|React Native CSS|Device UI|
 |:---------------------------------------------------------------------------|:-----------------------------|:----------------------------------------------------------------------------------------|
-|设备(1080P) 960dp * 540dp，分辨率1920 *1080， density 320dpi, xhdpi, 像素密度 2|根据公式:width: 320,height: 270|![device result]({{ site.cdn_prefix }}assets/images/assets/2022/03/21/device_radio_2.png)|
-|设备(4K) 960dp * 540dp，分辨率 3840 *2160,   density 640dpi, xhdpi, 像素密度 4|根据公式:width: 320,height: 270|![device result]({{ site.cdn_prefix }}assets/images/assets/2022/03/21/device_radio_4.png)|
+|设备(1080P) 960dp * 540dp，分辨率1920 *1080， density 320dpi, xhdpi, 像素密度 2|根据公式:width: 320,height: 270|![device result]({{ site.cdn_prefix }}assets/images/2022/03/21/device_radio_2.png)|
+|设备(4K) 960dp * 540dp，分辨率 3840 *2160,   density 640dpi, xhdpi, 像素密度 4|根据公式:width: 320,height: 270|![device result]({{ site.cdn_prefix }}assets/images/2022/03/21/device_radio_4.png)|
 
 
-*结论*：**蓝色盒子始终是整个屏幕的⅙ ，宽度是整个屏幕的 ⅓，高度是½.  实现了屏幕适配。这个解决方案会最大限度的保留设计图的大小与布局设计效果。**
+**结论**：***蓝色盒子始终是整个屏幕的⅙ ，宽度是整个屏幕的 ⅓，高度是½.  实现了屏幕适配。这个解决方案会最大限度的保留设计图的大小与布局设计效果。***
 
 比如红色区域的宽高，黄色区域的宽度  
-![layout]({{ site.cdn_prefix }}assets/images/assets/2022/03/21/tv_design.png)
+![layout]({{ site.cdn_prefix }}assets/images/2022/03/21/tv_design.png)
 
-*进阶抽离*
+***进阶抽离***
 将 px2dp 等比例转化方法提取出来，按需使用。
 这里也有一种方案是整体做了处理，缺点是内部一些特别的元素无法区别开
 
@@ -92,7 +92,7 @@ const image = getImage({
 });
 <Image source={image} style={{width: 200, height: 100}} />
 ```
-参考官网：https://reactnative.cn/docs/pixelratio
+参考官网：<https://reactnative.cn/docs/pixelratio>
 
 ### 场景：字体
 
@@ -102,8 +102,8 @@ const image = getImage({
 fontSize: 12 * getFontScale();
 2. 根据设备屏幕大小自适应
   
-   有很多的换算方法，总的来说，要么根据像素密度比，要么根据屏幕缩放比，要么根据屏幕尺寸分区
-  https://github.com/CodeRabbitYu/ShiTu/blob/master/app/utils/FontSize.js
+   有很多的换算方法，总的来说，要么根据像素密度比，要么根据屏幕缩放比，要么根据屏幕尺寸分区。[参考这里](https://github.com/CodeRabbitYu/ShiTu/blob/master/app/utils/FontSize.js)  
+   
 3. 需要自适应父容器的高宽
    
    ```
@@ -113,12 +113,12 @@ fontSize: 12 * getFontScale();
           </Text>
    </View>
    ```
-![layout]({{ site.cdn_prefix }}assets/images/assets/2022/03/21/font.png)
+![layout]({{ site.cdn_prefix }}assets/images/2022/03/21/font.png)
 
-*进阶抽离*  
+***进阶抽离***  
 可以写一个custom Text，在内部进行字体大小转换，返回原生 Text。
 
-*思考*：**对于字体的问题，从用户体验来说用户心愿看到的字体是相对大小的，就像看报纸，多大张的报纸，字体都应该是一样大，有一个最适宜浏览的字体大小，而自适应突破了这种设计哲学。**
+**思考**：*对于字体的问题，从用户体验来说用户心愿看到的字体是相对大小的，就像看报纸，多大张的报纸，字体都应该是一样大，有一个最适宜浏览的字体大小，而自适应突破了这种设计哲学。*
 
 
 ### 场景：边框或线条
@@ -126,7 +126,7 @@ fontSize: 12 * getFontScale();
 ```javascript
 borderWidth: 1/PixelRatio.get()
 ```
-![layout]({{ site.cdn_prefix }}assets/images/assets/2022/03/21/line_border.png)
+![layout]({{ site.cdn_prefix }}assets/images/2022/03/21/line_border.png)
 
 **像素精度**  
 比如设计稿上有个尺寸 width: 8.6 我们应该如何使用？
@@ -135,7 +135,7 @@ borderWidth: 1/PixelRatio.get()
 width: PixelRatio.roundToNearestPixel(8.4) 
 ```
 
-###不同设备屏幕尺寸
+### 不同设备屏幕尺寸
 在进行 Web UI开发时，我们一般会针对不同的区间做响应式设计，不同的区间在设计上也会有一些区别。
 USGA实际上设计了两个区间 phone 和 TV，但我们并没有以逻辑像素来判断，用的是上层给的 mode
 
@@ -160,16 +160,16 @@ width: 40 / PixelRatio.get()
 再看TV的设计稿，给的是 1920px * 1080px，我们测试的TV设备 (Android TV 1080P) 960dp * 540dp，像素密度 2，对应屏幕分辨率 1920px * 1080px
 
 ## 参考
-+ React Native设计稿匹配：https://iiong.com/react-native-design-match-matching/
-+ 聊聊React Native屏幕适配那些事儿：https://segmentfault.com/a/1190000039805723
-+ 屏幕尺寸、分辨率、像素密度三者关系：http://www.noobyard.com/article/p-axrxhjor-rt.html
-+ iOS和android布局开发单位对比(pt VS dp):https://juejin.cn/post/6844903536912760840
-+ 移动端样式开发小结: https://juejin.cn/post/6983852401543348231
-+ 美团：​​https://tech.meituan.com/2019/09/26/open-source-react-native-component-library-beeshell.html
-+ ui 组件库: https://blog.csdn.net/weixin_50001396/article/details/116423588
-+ 显示一条1px的线: https://github.com/susanwater/react-native-1/blob/master/pixel-ratio.md
++ React Native设计稿匹配：<https://iiong.com/react-native-design-match-matching/>
++ 聊聊React Native屏幕适配那些事儿：<https://segmentfault.com/a/1190000039805723>
++ 屏幕尺寸、分辨率、像素密度三者关系：<http://www.noobyard.com/article/p-axrxhjor-rt.html>
++ iOS和android布局开发单位对比(pt VS dp): <https://juejin.cn/post/6844903536912760840>
++ 移动端样式开发小结: <https://juejin.cn/post/6983852401543348231>
++ 美团：​​<https://tech.meituan.com/2019/09/26/open-source-react-native-component-library-beeshell.html>
++ ui 组件库: <https://blog.csdn.net/weixin_50001396/article/details/116423588>
++ 显示一条1px的线: <https://github.com/susanwater/react-native-1/blob/master/pixel-ratio.md>
 + React Native 分辨率适配 【进阶，提取转化】
-  - https://www.jianshu.com/p/7836523b4d20
-  - https://blog.actorsfit.com/a?ID=00600-084279b6-31a1-4475-aa41-7835987ac415
-+ 一文解决React-Native的屏幕适配  【封装 CustomStyleSheet 代替原生 StyleSheet】https://juejin.cn/post/6889339410546950152
+  - <https://www.jianshu.com/p/7836523b4d20>
+  - <https://blog.actorsfit.com/a?ID=00600-084279b6-31a1-4475-aa41-7835987ac415>
++ 一文解决React-Native的屏幕适配  【封装 CustomStyleSheet 代替原生 StyleSheet】<https://juejin.cn/post/6889339410546950152>
 
