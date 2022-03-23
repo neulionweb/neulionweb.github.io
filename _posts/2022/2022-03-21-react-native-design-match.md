@@ -139,25 +139,41 @@ width: PixelRatio.roundToNearestPixel(8.4)
 在进行 Web UI开发时，我们一般会针对不同的区间做响应式设计，不同的区间在设计上也会有一些区别。
 USGA实际上设计了两个区间 phone 和 TV，但我们并没有以逻辑像素来判断，用的是上层给的 mode
 
-+ 主流的Phone 屏幕尺寸及分辨率
-https://uiiiuiii.com/screen/index.htm
++ 主流的Phone 屏幕尺寸及分辨率 <https://uiiiuiii.com/screen/index.htm>
 
 + 主流的TV屏幕尺寸  
-1080*1920 -xhdpi (dpi=1.5)  
-720*1280 - mdpi   (dpi=1.0)  
-3840*2160 - xhdpi (dpi=4.0)  
 
-我们目前的在 TV 上的方案：
+![主流机顶盒]({{ site.cdn_prefix }}assets/images/2022/03/21/tv_screen.png)
+
+主流宽度：1920，1280，960
+
+| 宽 * 高 dp  | dpi     |
+| :--------: | :------|
+| 1920 * 1080| dpi=1.0 mdpi|
+| 1920 * 1080| dpi=1.5 hdpi|
+| 1920 * 1080| dpi=2 xhdpi|
+| 1280 * 720 | dpi=1.0 mdpi |
+| 1280 * 720 | dpi=1.5 hdpi|
+| 960 * 540  | dpi=2.0 xhdpi|
+| 960 * 540  | dpi=4.0 xxhdpi|
+
+
+**实践**  
+USGA
++ Phone mode.   
+看mobile的设计稿，给的是 375px * 646px, 我们测试的mobile 设备iphone 11 1792px * 828px, 像素密度 326/160。设备像素无关分辨率 896 * 414
+目前方案：直接使用的*设计稿尺寸*。因为设计稿尺寸与设备的dp区间基本一致。
++ TV mode.   
+看TV的设计稿，给的是 1920px * 1080px，我们测试的TV设备 (Android TV 1080P)，屏幕分辨率 1920px * 1080px，像素密度 2。设备像素无关分辨率 960dp * 540dp  
+设计稿尺寸与设备的实际dp区间不一致。
+目前方案：对盒模型的尺寸除以像素密度比，如
 ```javascript
 width: 40 / PixelRatio.get()
 ```
 
-完成的效果是，不同分辨率和不同屏幕大小的设备下，宽度始终是 40px
-效果会是这样的：在低密度上看起来比较大，高密度上看起来比较小
+  完成的效果是，不同分辨率和不同屏幕大小的设备下，宽度始终是 40px。所以在低密度上看起来比较大，高密度上看起来比较小。
 
-回答之前Cool的问题，为什么我们只针对TV做，mobile什么也不做是好的？
-看mobile的设计稿，给的是 375px * 646px, 我们测试的mobile 设备iphone 11 1792px * 828px, 像素密度 326/160
-再看TV的设计稿，给的是 1920px * 1080px，我们测试的TV设备 (Android TV 1080P) 960dp * 540dp，像素密度 2，对应屏幕分辨率 1920px * 1080px
+***最佳实践：按照上面的结论，边框和线条继续使用这种方式，其他盒模型的尺寸等比例缩放。***
 
 ## 参考
 + React Native设计稿匹配：<https://iiong.com/react-native-design-match-matching/>
